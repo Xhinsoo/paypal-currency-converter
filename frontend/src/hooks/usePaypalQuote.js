@@ -2,7 +2,7 @@ import { useState } from "react";
 import { fetchPaypalQuote } from "../services/apiService.js";
 
 export const usePaypalQuote = () => {
-
+    //send all inputs as one object, easier to manage and cleaner presentation 
     const [formData, setFormData ] = useState({
         base_currency: "USD",
         quote_currency: "EUR",
@@ -11,6 +11,7 @@ export const usePaypalQuote = () => {
     
     const [result, setResult] = useState("");
     const [validated, setValidated] = useState(false);
+    //... prev copies all previous data and only update [field] with value
     const updateField = (field, value) => {
         setFormData((prev) => ({
           ...prev,
