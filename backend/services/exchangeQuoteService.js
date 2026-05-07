@@ -1,5 +1,5 @@
 export const getExchangeQuote =  async(accessToken, data) =>{
-      console.log("1. Entering getExchangeQuote");
+      // console.log("1. Entering getExchangeQuote");
       const { base_currency, base_amount, quote_currency } = data;
       // console.log("debug : Acess token received in getExchangeQuote:", accessToken);
       try{
@@ -24,7 +24,7 @@ export const getExchangeQuote =  async(accessToken, data) =>{
             }),
           })
 
-          console.log("2. Response Status:", response.status);
+          // console.log("2. Response Status:", response.status);
                if (!response.ok) {
                  const errorDetails = await response.json();
               console.log("3. Rejection Log:", errorDetails);
@@ -33,7 +33,7 @@ export const getExchangeQuote =  async(accessToken, data) =>{
          
              return await response.json();
              }catch(error){
-                 console.error("4. fetch Error in getExchangeQuote:", error.message);
+                 // console.error("4. fetch Error in getExchangeQuote:", error.message);
                  throw err;
       }
     };
