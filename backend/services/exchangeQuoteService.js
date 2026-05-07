@@ -27,7 +27,7 @@ export const getExchangeQuote =  async(accessToken, data) =>{
           // console.log("2. Response Status:", response.status);
                if (!response.ok) {
                  const errorDetails = await response.json();
-              console.log("3. Rejection Log:", errorDetails);
+              //console.log("3. Rejection Log:", errorDetails);
               throw new Error("PayPal Rejected");
              }
          
