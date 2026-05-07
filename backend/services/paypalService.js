@@ -2,6 +2,7 @@ import AppError from "../middleware/appError.js";
 
 export const getPayPalAccessToken = async () => {
   const {PAYPAL_CLIENT_ID, PAYPAL_SECRET} = process.env;
+  //buffer holds binary (sort of intermediate stage before conversion to otherforms base64, 8 and so on)
   const auth = Buffer.from(`${PAYPAL_CLIENT_ID}:${PAYPAL_SECRET}`,
     ).toString("base64");
     try{
